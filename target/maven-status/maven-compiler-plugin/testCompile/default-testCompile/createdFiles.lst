@@ -1,0 +1,12 @@
+model\UserGenerator.class
+tests\ConstructorTest.class
+tests\RegistrationTest.class
+pages\LoginPage.class
+tests\LoginParametrizedTest.class
+tests\BaseTest.class
+pages\RegisterPage.class
+pages\HeaderPage.class
+pages\ForgotPasswordPage.class
+steps\UserSteps.class
+model\User.class
+pages\MainPage.class
