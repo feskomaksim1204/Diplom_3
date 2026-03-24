@@ -20,26 +20,30 @@ public class ConstructorTest extends BaseTest {
     @Test
     @DisplayName("Переход к разделу 'Булки'")
     @Description("Проверка, что после клика на 'Булки' активным становится раздел 'Булки'")
-    public void testBunsTab() {
+    public void testBunsTab() throws InterruptedException {
         // Сначала кликаем на другой раздел, чтобы убедиться, что переключение работает
         userSteps.clickSaucesTab();
+        Thread.sleep(500);
         userSteps.clickBunsTab();
+        Thread.sleep(500);
         assertEquals("Активный раздел не 'Булки'", "Булки", userSteps.getActiveTabText());
     }
 
     @Test
     @DisplayName("Переход к разделу 'Соусы'")
     @Description("Проверка, что после клика на 'Соусы' активным становится раздел 'Соусы'")
-    public void testSaucesTab() {
+    public void testSaucesTab() throws InterruptedException {
         userSteps.clickSaucesTab();
+        Thread.sleep(500);
         assertEquals("Активный раздел не 'Соусы'", "Соусы", userSteps.getActiveTabText());
     }
 
     @Test
     @DisplayName("Переход к разделу 'Начинки'")
     @Description("Проверка, что после клика на 'Начинки' активным становится раздел 'Начинки'")
-    public void testFillingsTab() {
+    public void testFillingsTab() throws InterruptedException {
         userSteps.clickFillingsTab();
+        Thread.sleep(500);
         assertEquals("Активный раздел не 'Начинки'", "Начинки", userSteps.getActiveTabText());
     }
 }
