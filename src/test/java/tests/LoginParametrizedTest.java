@@ -1,8 +1,9 @@
 package tests;
 
+import client.UserApiClient;
+import constants.Endpoints;
+import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
 import model.User;
 import model.UserGenerator;
 import org.junit.After;
@@ -21,6 +22,7 @@ public class LoginParametrizedTest extends BaseTest {
     private User user;
     private String accessToken;
     private HeaderPage headerPage;
+    private UserApiClient userApiClient;
 
     private final String navigationMethod;
     private final String description;
@@ -43,23 +45,21 @@ public class LoginParametrizedTest extends BaseTest {
     @Before
     public void setUpTest() {
         user = UserGenerator.getRandomUser();
+        userApiClient = new UserApiClient();
 
-        RestAssured.baseURI = "https://stellarburgers.education-services.ru";
-        Response response = RestAssured.given()
-                .header("Content-Type", "application/json")
-                .body(user)
-                .when()
-                .post("/api/auth/register");
-
-        accessToken = response.then().extract().path("accessToken");
+        // Создаём пользователя через API
+        accessToken = userApiClient.getAccessToken(
+                userApiClient.createUser(user)
+        );
 
         userSteps = new UserSteps(driver);
         headerPage = new HeaderPage(driver);
-        driver.get("https://stellarburgers.education-services.ru");
+        driver.get(Endpoints.BASE_URL);
     }
 
     @Test
     @DisplayName("Вход пользователя")
+    @Description("Проверка входа через разные кнопки навигации")
     public void testLogin() {
         switch (navigationMethod) {
             case "mainButton":
@@ -89,10 +89,7 @@ public class LoginParametrizedTest extends BaseTest {
     @After
     public void cleanUp() {
         if (accessToken != null) {
-            RestAssured.given()
-                    .header("Authorization", accessToken)
-                    .when()
-                    .delete("/api/auth/user");
+            userApiClient.deleteUser(accessToken);
         }
     }
 }

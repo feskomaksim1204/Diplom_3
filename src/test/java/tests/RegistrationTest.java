@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import model.User;
 import model.UserGenerator;
@@ -23,6 +24,7 @@ public class RegistrationTest extends BaseTest {
 
     @Test
     @DisplayName("Успешная регистрация пользователя")
+    @Description("Проверка успешной регистрации нового пользователя")
     public void testSuccessfulRegistration() {
         userSteps.clickPersonalAccountButton();
         userSteps.clickRegisterLinkOnLogin();
@@ -34,6 +36,7 @@ public class RegistrationTest extends BaseTest {
 
     @Test
     @DisplayName("Ошибка при регистрации с паролем меньше 6 символов")
+    @Description("Проверка появления ошибки при попытке зарегистрироваться с паролем менее 6 символов")
     public void testRegistrationWithInvalidPassword() {
         User invalidUser = UserGenerator.getUserWithInvalidPassword();
 

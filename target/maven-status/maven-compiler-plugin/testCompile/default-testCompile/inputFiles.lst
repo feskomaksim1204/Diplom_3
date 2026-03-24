@@ -1,0 +1,14 @@
+C:\Users\Public\prodjects\Diplom\3\src\test\java\client\UserApiClient.java
+C:\Users\Public\prodjects\Diplom\3\src\test\java\constants\Endpoints.java
+C:\Users\Public\prodjects\Diplom\3\src\test\java\model\User.java
+C:\Users\Public\prodjects\Diplom\3\src\test\java\model\UserGenerator.java
+C:\Users\Public\prodjects\Diplom\3\src\test\java\pages\ForgotPasswordPage.java
+C:\Users\Public\prodjects\Diplom\3\src\test\java\pages\HeaderPage.java
+C:\Users\Public\prodjects\Diplom\3\src\test\java\pages\LoginPage.java
+C:\Users\Public\prodjects\Diplom\3\src\test\java\pages\MainPage.java
+C:\Users\Public\prodjects\Diplom\3\src\test\java\pages\RegisterPage.java
+C:\Users\Public\prodjects\Diplom\3\src\test\java\steps\UserSteps.java
+C:\Users\Public\prodjects\Diplom\3\src\test\java\tests\BaseTest.java
+C:\Users\Public\prodjects\Diplom\3\src\test\java\tests\ConstructorTest.java
+C:\Users\Public\prodjects\Diplom\3\src\test\java\tests\LoginParametrizedTest.java
+C:\Users\Public\prodjects\Diplom\3\src\test\java\tests\RegistrationTest.java

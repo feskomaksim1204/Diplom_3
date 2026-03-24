@@ -1,0 +1,14 @@
+model\UserGenerator.class
+client\UserApiClient.class
+tests\ConstructorTest.class
+pages\LoginPage.class
+tests\BaseTest.class
+pages\RegisterPage.class
+pages\HeaderPage.class
+pages\ForgotPasswordPage.class
+steps\UserSteps.class
+pages\MainPage.class
+constants\Endpoints.class
+tests\RegistrationTest.class
+tests\LoginParametrizedTest.class
+model\User.class
